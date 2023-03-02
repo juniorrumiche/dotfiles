@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-
 # Icons
 iDIR='/usr/share/archcraft/icons/dunst'
 notify_cmd='dunstify -u low -h string:x-dunst-stack-tag:obvolume'
 
 # Get Volume
 get_volume() {
-	echo "`pulsemixer --get-volume | cut -d' ' -f1`"
+	echo "$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }' | sed 's/%//')"
 }
 
 # Get icons
@@ -31,37 +30,27 @@ notify_user() {
 
 # Increase Volume
 inc_volume() {
-	[[ `pulsemixer --get-mute` == 1 ]] && pulsemixer --unmute
-	pulsemixer --max-volume 100 --change-volume +5 && get_icon && notify_user
+	amixer -q sset Master 5%+ &
+	get_icon && notify_user
 }
 
 # Decrease Volume
 dec_volume() {
-	[[ `pulsemixer --get-mute` == 1 ]] && pulsemixer --unmute
-	pulsemixer --max-volume 100 --change-volume -5 && get_icon && notify_user
+	amixer -q sset Master 5%- &
+	get_icon && notify_user
 }
 
 # Toggle Mute
 toggle_mute() {
-	if [[ `pulsemixer --get-mute` == 0 ]]; then
-		pulsemixer --toggle-mute && ${notify_cmd} -i "$iDIR/volume-mute.png" "Mute"
+	if amixer -c 0 get Master | grep off; then
+		amixer -q sset Master toggle && get_icon && ${notify_cmd} -i "$icon" "Unmute"
 	else
-		pulsemixer --toggle-mute && get_icon && ${notify_cmd} -i "$icon" "Unmute"
-	fi
-}
-
-# Toggle Mic
-toggle_mic() {
-	ID="`pulsemixer --list-sources | grep 'Default' | cut -d',' -f1 | cut -d' ' -f3`"
-	if [[ `pulsemixer --id $ID --get-mute` == 0 ]]; then
-		pulsemixer --id ${ID} --toggle-mute && ${notify_cmd} -i "$iDIR/microphone-mute.png" "Microphone Switched OFF"
-	else
-		pulsemixer --id ${ID} --toggle-mute && ${notify_cmd} -i "$iDIR/microphone.png" "Microphone Switched ON"
+		amixer -q sset Master toggle && ${notify_cmd} -i "$iDIR/volume-mute.png" "Mute"
 	fi
 }
 
 # Execute accordingly
-if [[ -x `which pulsemixer` ]]; then
+if [[ -x $(which amixer) ]]; then
 	if [[ "$1" == "--get" ]]; then
 		get_volume
 	elif [[ "$1" == "--inc" ]]; then
@@ -70,11 +59,9 @@ if [[ -x `which pulsemixer` ]]; then
 		dec_volume
 	elif [[ "$1" == "--toggle" ]]; then
 		toggle_mute
-	elif [[ "$1" == "--toggle-mic" ]]; then
-		toggle_mic
 	else
 		echo $(get_volume)%
 	fi
 else
-	${notify_cmd} "'pulsemixer' is not installed."
+	${notify_cmd} "'amixer' Please Install."
 fi
