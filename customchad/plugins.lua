@@ -1,7 +1,6 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
-
   -- crea comandos para ejecuar projectos
   {
     "sheodox/projectlaunch.nvim",
@@ -130,6 +129,7 @@ local plugins = {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
       "tpope/vim-dadbod",
+      "kristijanhusak/vim-dadbod-completion",
     },
     keys = { { "<leader>db", mode = "n" } },
   },
@@ -140,7 +140,6 @@ local plugins = {
   {
     "windwp/nvim-ts-autotag",
     ft = { "javascriptreact" },
-    after = "nvim-treesitter",
     config = function()
       require("nvim-ts-autotag").setup {}
     end,

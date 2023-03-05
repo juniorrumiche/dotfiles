@@ -1,4 +1,3 @@
--- custom.plugins.lspconfig
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
@@ -12,7 +11,6 @@ local servers = {
   "jsonls",
   "emmet_ls",
   "tsserver",
-  "sqls",
 
   -- c , c++
   "clangd",
@@ -30,31 +28,16 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.lua_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-
-  settings = {
-    Lua = {
-      runtime = {
-        version = "LuaJIT",
-      },
-      diagnostics = {
-        enable = true,
-        globals = { "vim", "use", "awesome", "client", "root" },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-          ["/usr/share/awesome/lib"] = true,
-          [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua"] = true,
-        },
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
+lspconfig.emmet_ls.setup {
+  filetypes = {
+    "html",
+    "typescriptreact",
+    "javascriptreact",
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "eruby",
+    "htmldjango",
   },
 }

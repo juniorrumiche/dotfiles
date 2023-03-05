@@ -7,6 +7,7 @@ M.cmp = {
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = "vim-dadbod-completion" },
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "neorg" },
@@ -17,13 +18,18 @@ M.cmp = {
     format = function(entry, vim_item)
       local icons = require("nvchad_ui.icons").lspkind
       local source_mapping = {
-        buffer = "[Buffer]",
+
         nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
-        path = "[Path]",
+        nvim_lua = "[LUA]",
+        ["vim-dadbod-completion"] = "[DB]",
+        path = "[PATH]",
+        buffer = "[BUFFER]",
       }
       vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
       vim_item.menu = source_mapping[entry.source.name]
+      if entry.source.name == "vim-dadbod-completion" then
+        vim_item.kind = string.format("%s keyword", "")
+      end
 
       return vim_item
     end,

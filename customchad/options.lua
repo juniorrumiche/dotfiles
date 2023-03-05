@@ -10,6 +10,7 @@ gui.guifont = "JetBrainsMonoMedium Nerd Font Mono:h9.6:#h-Medium"
 opt.number = true
 opt.relativenumber = true
 opt.shiftwidth = 4
+opt.tabstop = 4
 opt.numberwidth = 3
 
 opt.updatetime = 300

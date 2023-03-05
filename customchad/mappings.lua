@@ -1,4 +1,9 @@
 local M = {}
+M.usere = {
+  n = {
+    ["<leader>rl"] = { "<cmd> ReloadFile <CR>", "Reload File" },
+  },
+}
 
 M.trouble = {
   n = {
@@ -41,12 +46,15 @@ M.nohelp = {
 -- for database
 M.db = {
   n = {
-    ["<leader>dbo"] = { "<cmd> DBUI <CR>", "  DBUI" },
+    ["<leader>dbb"] = { "<cmd> DBUI <CR>", "  DBUI" },
   },
 }
 
 M.telescope = {
   n = {
+
+    ["<leader>tb"] = { "<cmd> Telescope builtin <CR>", "  Telescope FileTypes" },
+    ["<leader>ft"] = { "<cmd> Telescope filetypes <CR>", "  Telescope FileTypes" },
     ["<leader>vh"] = { "<cmd> Telescope help_tags <CR>", "  Projects" },
     ["<leader>p"] = { "<cmd> Telescope project <CR>", "  Projects" },
     ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "  Telescope Grep" },
