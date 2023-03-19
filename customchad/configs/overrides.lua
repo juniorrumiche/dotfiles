@@ -9,6 +9,7 @@ M.cmp = {
     { name = "nvim_lsp" },
     { name = "vim-dadbod-completion" },
     { name = "nvim_lua" },
+    { name = "emmet_vim" },
     { name = "luasnip" },
     { name = "neorg" },
     { name = "buffer" },
@@ -21,6 +22,7 @@ M.cmp = {
 
         nvim_lsp = "[LSP]",
         nvim_lua = "[LUA]",
+        emmet_vim = "[EMMET]",
         ["vim-dadbod-completion"] = "[DB]",
         path = "[PATH]",
         buffer = "[BUFFER]",
@@ -30,7 +32,6 @@ M.cmp = {
       if entry.source.name == "vim-dadbod-completion" then
         vim_item.kind = string.format("%s keyword", "")
       end
-
       return vim_item
     end,
   },
@@ -38,6 +39,9 @@ M.cmp = {
 
 M.treesitter = {
   ensure_installed = {
+    "html",
+    "php",
+    "http",
     "vim",
     "css",
     "javascript",

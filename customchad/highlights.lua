@@ -6,7 +6,7 @@ M.override = {
   ["@method"] = { italic = true },
 
   -- colores personalizados
-  PmenuSel = { italic = true, bg = "#8CAAEE" },
+  PmenuSel = { bold = true, bg = "#8CAAEE" },
   Boolean = { italic = true },
   String = { italic = true },
   Comment = { italic = true },

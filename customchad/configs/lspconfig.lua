@@ -9,7 +9,6 @@ local servers = {
   "html",
   "cssls",
   "jsonls",
-  "emmet_ls",
   "tsserver",
 
   -- c , c++
@@ -27,17 +26,3 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
-
-lspconfig.emmet_ls.setup {
-  filetypes = {
-    "html",
-    "typescriptreact",
-    "javascriptreact",
-    "css",
-    "sass",
-    "scss",
-    "less",
-    "eruby",
-    "htmldjango",
-  },
-}

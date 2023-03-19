@@ -1,4 +1,15 @@
 local M = {}
+
+M.rest = {
+  n = {
+    ["<leader>rr"] = {
+      function()
+        require("rest-nvim").run()
+      end,
+      " Rest Run",
+    },
+  },
+}
 M.usere = {
   n = {
     ["<leader>rl"] = { "<cmd> ReloadFile <CR>", "Reload File" },

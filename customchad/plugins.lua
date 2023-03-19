@@ -3,12 +3,35 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
   -- crea comandos para ejecuar projectos
   {
-    "sheodox/projectlaunch.nvim",
-    event = "InsertEnter",
+    "rest-nvim/rest.nvim",
+    ft = { "http" },
     config = function()
-      require("projectlaunch").setup()
+      require("rest-nvim").setup {
+        result = {
+          show_headers = false,
+        },
+      }
     end,
   },
+
+  -- para emmet, el lsp de emmet no me gusta
+  {
+    "dcampos/cmp-emmet-vim",
+    ft = {
+      "html",
+      "css",
+      "sass",
+      "scss",
+      "less",
+      "eruby",
+      "htmldjango",
+    },
+    dependencies = {
+      "mattn/emmet-vim",
+    },
+  },
+
+    -- modo no distraccion
   {
     event = "InsertEnter",
     "pocco81/true-zen.nvim",
@@ -133,13 +156,15 @@ local plugins = {
     },
     keys = { { "<leader>db", mode = "n" } },
   },
+
+    -- gestor de proyectos con telescope
   { "nvim-telescope/telescope-project.nvim" },
   --
   -- for autocose tags react components
   --
   {
     "windwp/nvim-ts-autotag",
-    ft = { "javascriptreact" },
+    ft = { "javascriptreact", "typescriptreact" },
     config = function()
       require("nvim-ts-autotag").setup {}
     end,
