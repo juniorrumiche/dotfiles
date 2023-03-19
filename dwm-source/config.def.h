@@ -206,8 +206,8 @@ static const char *downbl[] 			= { "/usr/share/archcraft/dwm/bin/dwmbrightness.s
 
 
 static const char *audioplay[] = {"mpc", "toggle", NULL};
-static const char *audioprev[] = {"mpc", "prev", NULL};
-static const char *audionext[] = {"mpc", "next", NULL};
+static const char *audioprev[] = {"/usr/share/archcraft/dwm/bin/dwmchangemusic.sh", "--prev", NULL};
+static const char *audionext[] = {"/usr/share/archcraft/dwm/bin/dwmchangemusic.sh", "--next", NULL};
 
 /* Screenshot */
 static const char *shotnow[]  			= { "/usr/share/archcraft/dwm/bin/dwmscreenshot.sh", "--now", NULL };
