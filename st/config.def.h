@@ -97,9 +97,9 @@ static int bellvolume = 0;
 char *termname = "st-256color";
 
 /*
- * spaces per tab
- *
- * When you are changing this value, don't forget to adapt the »it« value in
+* spaces per tab
+*
+* When you are changing this value, don't forget to adapt the »it« value in
  * the st.info and appropriately install the st.info in the environment where
  * you use this st version.
  *
@@ -116,37 +116,6 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 float alpha = 1.0;
 
-/* Terminal colors (16 first used in escape sequence) */
-// static const char *colorname[] = {
-//   "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-//   "#cc241d",
-//   "#98971a",
-//   "#d79921",
-//   "#458588",
-//   "#b16286",
-//   "#689d6a",
-//   "#a89984",
-//   "#928374",
-//   "#fb4934",
-//   "#b8bb26",
-//   "#fabd2f",
-//   "#83a598",
-//   "#d3869b",
-//   "#8ec07c",
-//   "#ebdbb2",
-//   [255] = 0,
-//   /* more colors can be added after 255 to use with DefaultXX */
-//   "#add8e6", /* 256 -> cursor */
-//   "#555555", /* 257 -> rev cursor*/
-//   "#282828", /* 258 -> bg */
-//   "#ffffff", /* 259 -> fg */
-// };
-//
-//
-// /*
-//  * Default colors (colorname index)
-//  * foreground, background, cursor, reverse cursor
-//  */
 // unsigned int defaultfg = 259;
 // unsigned int defaultbg = 258;
 // unsigned int defaultcs = 256;
@@ -275,8 +244,6 @@ static Shortcut shortcuts[] = {
   { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
   { MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
   { MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
-  { MODKEY,               XK_k,           kscrollup,      {.i =  1} },
-  { MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
   { MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
   { MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
   { MODKEY,               XK_u,           kscrollup,      {.i = -1} },
