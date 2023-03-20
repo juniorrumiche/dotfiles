@@ -1,6 +1,19 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
+
+  -- mover lineas
+  {
+    "booperlv/nvim-gomove",
+    keys = {
+      { "<M-j>", mode = "v" },
+      { "<M-k>", mode = "v" },
+    },
+    -- event = "InsertEnter",
+    config = function()
+      require("gomove").setup {}
+    end,
+  },
   -- crea comandos para ejecuar projectos
   {
     "rest-nvim/rest.nvim",
@@ -31,7 +44,7 @@ local plugins = {
     },
   },
 
-    -- modo no distraccion
+  -- modo no distraccion
   {
     event = "InsertEnter",
     "pocco81/true-zen.nvim",
@@ -157,7 +170,7 @@ local plugins = {
     keys = { { "<leader>db", mode = "n" } },
   },
 
-    -- gestor de proyectos con telescope
+  -- gestor de proyectos con telescope
   { "nvim-telescope/telescope-project.nvim" },
   --
   -- for autocose tags react components

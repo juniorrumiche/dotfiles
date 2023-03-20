@@ -6,7 +6,7 @@ g.db_ui_use_nerd_fonts = 1
 g.db_ui_show_database_icon = 1
 g.db_ui_force_echo_notifications = 1
 
-gui.guifont = "JetBrainsMonoMedium Nerd Font Mono:h9.7:#h-Medium Italic:"
+gui.guifont = "JetBrainsMonoMedium Nerd Font Mono:h9.7:i:"
 opt.number = true
 opt.relativenumber = true
 opt.shiftwidth = 4
