@@ -109,8 +109,11 @@ M.mason = {
     "prettierd",
     "autopep8",
     "djlint",
-    "eslint_d",
     "pylint",
+    "phpcbf",
+
+    -- "code actions"
+    "eslint_d",
   },
 }
 

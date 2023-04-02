@@ -3,6 +3,7 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- mover lineas
+  --
   {
     "booperlv/nvim-gomove",
     keys = {

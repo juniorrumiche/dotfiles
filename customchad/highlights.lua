@@ -4,6 +4,10 @@ M.override = {
   ["@function"] = { italic = true },
   ["@parameter"] = { italic = true },
   ["@method"] = { italic = true },
+  ["@variable"] = { fg = "#EF9F76" },
+  ["@string"] = { italic = true },
+  ["@conditional"] = { bold = true },
+  ['@constant'] = { bold = true },
 
   -- colores personalizados
   PmenuSel = { bold = true, bg = "#8CAAEE" },
@@ -14,11 +18,7 @@ M.override = {
   Keyword = { bold = true },
   Conditional = { bold = true },
   Operator = { bold = true },
-
-  MindNodeRoot = { bold = true, italic = true },
-  MindNodeParent = { bold = true, italic = true },
-  MindNodeLeaf = { bold = true, italic = true },
-  NvimTreeFolderName = { italic = true },
+  Variable = { fg = "#EF9F76" },
 }
 
 return M

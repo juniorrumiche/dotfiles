@@ -46,14 +46,10 @@ M.base_16 = {
   base09 = "#ea9558",
   base0A = "#ECBE7B",
   base0B = "#98be65",
-  base0C = "#66c4ff",
+  base0C = "#48a6e6",
   base0D = "#48a6e6",
   base0E = "#9c94d4",
   base0F = "#c85a50",
-}
-
-M.polish_hl = {
-  ["@field"] = { fg = M.base_30.blue },
 }
 
 M.type = "dark"

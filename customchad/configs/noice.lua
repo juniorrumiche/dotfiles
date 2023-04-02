@@ -6,6 +6,9 @@ end
 
 local options = {
   lsp = {
+    progress = {
+      enabled = false,
+    },
     signature = {
       enabled = false,
     },
