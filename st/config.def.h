@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static  char *font = "JetBrainsMono Nerd Font:pixelsize=14:autohint=true:style=Bold Italic" ;
-static  char *font2[] = { "JetBrainsMono Nerd Font:pixelsize=14:autohint=true:style=Bold Italic" };
+static  char *font = "JetBrainsMono Nerd Font Mono:pixelsize=14:autohint=true:style=Bold" ;
+static  char *font2[] = { "JetBrainsMono Nerd Font Mono:pixelsize=14:autohint=true:style=Bold" };
 static int borderpx = 15;
 
 /*
