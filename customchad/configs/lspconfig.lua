@@ -18,6 +18,7 @@ local servers = {
   "pyright",
   "intelephense",
   "bashls",
+  "dockerls",
 }
 
 for _, lsp in ipairs(servers) do

@@ -55,6 +55,7 @@ M.treesitter = {
     "dart",
     "bash",
     "lua",
+    "dockerfile",
   },
 }
 M.blankline = {
@@ -103,6 +104,7 @@ M.mason = {
     "css-lsp",
     "pyright",
     "intelephense",
+    "dockerls",
 
     -- formatters
     "stylua",
