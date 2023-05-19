@@ -30,19 +30,8 @@ local plugins = {
 
   -- para emmet, el lsp de emmet no me gusta
   {
-    "dcampos/cmp-emmet-vim",
-    ft = {
-      "html",
-      "css",
-      "sass",
-      "scss",
-      "less",
-      "eruby",
-      "htmldjango",
-    },
-    dependencies = {
-      "mattn/emmet-vim",
-    },
+    "mattn/emmet-vim",
+    keys = { { "<C-Y>,", mode = "i" } },
   },
 
   -- modo no distraccion
@@ -61,30 +50,6 @@ local plugins = {
         },
       }
     end,
-  },
-
-  -- para notas con neorg
-  {
-    "nvim-neorg/neorg",
-    ft = "norg",
-    build = ":Neorg sync-parsers",
-    config = function()
-      require("neorg").setup {
-        load = {
-          ["core.integrations.treesitter"] = {},
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.norg.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/notes",
-              },
-            },
-          },
-        },
-      }
-    end,
-    dependencies = { { "nvim-lua/plenary.nvim" } },
   },
 
   -- mejora la interfaz de usuario

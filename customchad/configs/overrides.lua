@@ -7,11 +7,9 @@ M.cmp = {
   },
   sources = {
     { name = "nvim_lsp" },
-    { name = "vim-dadbod-completion" },
     { name = "nvim_lua" },
-    { name = "emmet_vim" },
     { name = "luasnip" },
-    { name = "neorg" },
+    { name = "vim-dadbod-completion" },
     { name = "buffer" },
     { name = "path" },
   },
@@ -22,7 +20,6 @@ M.cmp = {
 
         nvim_lsp = "[LSP]",
         nvim_lua = "[LUA]",
-        emmet_vim = "[EMMET]",
         ["vim-dadbod-completion"] = "[DB]",
         path = "[PATH]",
         buffer = "[BUFFER]",
