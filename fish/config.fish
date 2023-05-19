@@ -10,6 +10,8 @@ if status is-interactive
     alias gpush="git push origin"
     alias gswitch="git switch"
 
+    alias gpt="tgpt "
+
     # my alias
     alias v="neovide"
     alias showkeys="screenkey  -p bottom --geometry 30%x50%+68%+50% --opacity 0.6"
