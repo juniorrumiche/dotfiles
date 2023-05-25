@@ -13,6 +13,8 @@ if status is-interactive
     alias gpt="tgpt "
 
     # my alias
-    alias v="neovide"
+    alias v="nvim"
     alias showkeys="screenkey  -p bottom --geometry 30%x50%+68%+50% --opacity 0.6"
+  
 end
+starship init fish | source
