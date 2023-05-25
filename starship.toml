@@ -1,9 +1,9 @@
 format = """
-[←](#9A348E) \
+[](fg:#DA627D) \
  $username\
-[→](fg:#9A348E)\
+[](fg:#DA627D)\
 $directory\
-[→](fg:#DA627D )\
+[→](fg:#DA627D)\
 $git_branch\
 $git_commit\
 $git_status\
@@ -24,11 +24,17 @@ $nim\
 $rust\
 [→](fg:#86BBD8 )\
 $docker_context\
-[→](fg:#06969A )\
-$cmd_duration\
+$fill\
+[→](fg:#33658A)\
+$jobs\
 $time\
-[→ ](fg:#33658A)\
+[](fg:#33658A)\
+$cmd_duration\
+[  ](fg:#33658A)\
+$line_break\
+$character\
 """
+
  
 
 # Here is how you can shorten some long paths by text replacement
@@ -38,11 +44,6 @@ $time\
 # will not be replaced, because "Documents" was already substituted before.
 # So either put "Important Documents" before "Documents" or use the substituted version:
 # "Important  " = "  "
-[cmd_duration]
-min_time = 1
-show_milliseconds = true
-format = ' took [$duration](fg:#FCA17D )'
-
 [directory.substitutions]
 "Documentos" = " 󰈙 Documentos "
 "Descargas" = " 󰇚  Descargas "
@@ -52,6 +53,20 @@ format = ' took [$duration](fg:#FCA17D )'
 "Escritorio" = " 󰧨 Escritorio"
 
 
+[fill]
+symbol = ' '
+[character]
+success_symbol = "[❯](fg:#FCA17D )"
+error_symbol = "[❯](fg:#DA627D)"
+vicmd_symbol = "[❮](green)"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+
 # Disable the blank line at the start of the prompt
 # add_newline = false
  
@@ -59,7 +74,13 @@ format = ' took [$duration](fg:#FCA17D )'
 
 [username]
 show_always = true
-format = '[$user ]($style)'
+format = '[$user ](fg:#FCA17D )'
+
+[cmd_duration]
+min_time = 1
+show_milliseconds = true
+format = ' took [$duration](fg:#FCA17D )'
+
 
 [git_branch]
 symbol = " "
