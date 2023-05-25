@@ -81,21 +81,6 @@ local plugins = {
   --
   {
     "f-person/git-blame.nvim",
-    event = { "InsertEnter" },
-    config = function()
-      vim.g.gitblame_message_when_not_committed = " • No commit • "
-      vim.g.gitblame_date_format = "%r"
-    end,
-    cond = function()
-      local path = vim.loop.cwd() .. "/.git"
-      local ok, _ = vim.loop.fs_stat(path)
-      if ok then
-        require "notify"("Load Git Blame ", "info", { title = "GitBlame", timeout = 2000 })
-        return true
-      end
-
-      return false
-    end,
   },
 
   {

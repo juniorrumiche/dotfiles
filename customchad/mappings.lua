@@ -65,6 +65,7 @@ M.telescope = {
   n = {
 
     ["<leader>tb"] = { "<cmd> Telescope builtin <CR>", "  Telescope FileTypes" },
+    ["<leader>bb"] = { "<cmd> Telescope buffers <CR>", "  Telescope Buffers" },
     ["<leader>ft"] = { "<cmd> Telescope filetypes <CR>", "  Telescope FileTypes" },
     ["<leader>vh"] = { "<cmd> Telescope help_tags <CR>", "  Projects" },
     ["<leader>p"] = { "<cmd> Telescope project <CR>", "  Projects" },
