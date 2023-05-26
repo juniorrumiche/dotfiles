@@ -55,6 +55,7 @@ $character\
 
 [fill]
 symbol = ' '
+
 [character]
 success_symbol = "[❯](fg:#FCA17D )"
 error_symbol = "[❯](fg:#DA627D)"
