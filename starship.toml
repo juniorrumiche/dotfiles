@@ -6,7 +6,6 @@ $directory\
 [→](fg:#DA627D)\
 $git_branch\
 $git_commit\
-$git_status\
 $git_metrics\
 [→](fg:#FCA17D )\
 $c\
@@ -88,6 +87,7 @@ symbol = " "
 format = '[[ $symbol $branch ](fg:#FCA17D )]($style)'
 
 [git_commit]
+commit_hash_length = 5
 only_detached = false
 tag_disabled = false
 tag_symbol = ' 󰓹'
