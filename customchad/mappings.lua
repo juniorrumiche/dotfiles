@@ -10,7 +10,7 @@ M.rest = {
     },
   },
 }
-M.usere = {
+M.user = {
   n = {
     ["<leader>rl"] = { "<cmd> ReloadFile <CR>", "Reload File" },
   },
@@ -26,17 +26,6 @@ M.trouble = {
 M.truzen = {
   n = {
     ["<leader>ta"] = { "<cmd> TZAtaraxis <CR>", " Truzen Ataraxis" },
-  },
-}
-
-M.project_launch = {
-  n = {
-    ["<leader>pl"] = {
-      function()
-        require("projectlaunch").toggle_main_menu()
-      end,
-      "Project Launch",
-    },
   },
 }
 
@@ -65,6 +54,7 @@ M.telescope = {
   n = {
 
     ["<leader>tb"] = { "<cmd> Telescope builtin <CR>", "  Telescope FileTypes" },
+    ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "  Telescope keymaps" },
     ["<leader>bb"] = { "<cmd> Telescope buffers <CR>", "  Telescope Buffers" },
     ["<leader>ft"] = { "<cmd> Telescope filetypes <CR>", "  Telescope FileTypes" },
     ["<leader>vh"] = { "<cmd> Telescope help_tags <CR>", "  Projects" },
@@ -102,6 +92,46 @@ M.glow = {
 M.quit_windows = {
   n = {
     ["<leader>q"] = { "<cmd> q <CR>", "  quit windows " },
+  },
+}
+
+M.bookmarks = {
+  n = {
+    ["<leader>mm"] = {
+      function()
+        require("bookmarks").bookmark_toggle()
+      end,
+      "  bookmarks Toogle",
+    },
+
+    ["<leader>mi"] = {
+      function()
+        require("bookmarks").bookmark_ann()
+      end,
+      "  bookmarks Edit",
+    },
+
+    ["<leader>mc"] = {
+      function()
+        require("bookmarks").bookmark_clean()
+      end,
+      "  bookmarks Clean",
+    },
+
+    ["<leader>mn"] = {
+      function()
+        require("bookmarks").bookmark_next()
+      end,
+      "  bookmarks Next",
+    },
+
+    ["<leader>mp"] = {
+      function()
+        require("bookmarks").bookmark_prev()
+      end,
+      "  bookmarks Prev",
+    },
+    ["<leader>ml"] = { "<cmd> Telescope bookmarks list <CR>", "  bookmarks Edit" },
   },
 }
 

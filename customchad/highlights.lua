@@ -7,7 +7,10 @@ M.override = {
   ["@variable"] = { fg = "#EF9F76" },
   ["@string"] = { italic = true },
   ["@conditional"] = { bold = true },
-  ['@constant'] = { bold = true },
+  ["@constant"] = { bold = true },
+
+  Sneak = { bg = "#EF9F76" },
+  Folded = { bg = "#303446", fg = "#EF9F76" },
 
   -- colores personalizados
   PmenuSel = { bold = true, bg = "#8CAAEE" },

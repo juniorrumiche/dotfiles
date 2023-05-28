@@ -1,6 +1,30 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
+  {
+    keys = { { "zf", mode = "n" } },
+    "anuvyklack/pretty-fold.nvim",
+    config = function()
+      require("pretty-fold").setup {}
+    end,
+  },
+  {
+    "tomasky/bookmarks.nvim",
+    config = function()
+      require("bookmarks").setup {}
+    end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
 
   -- mover lineas
   --
