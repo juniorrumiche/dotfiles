@@ -1,13 +1,36 @@
 local overrides = require "custom.configs.overrides"
 
 local plugins = {
+
+  --
+  --muestra los pliegues en la columna de signos
   {
-    keys = { { "zf", mode = "n" } },
+    "yaocccc/nvim-foldsign",
+    keys = { { "z", mode = "n" }, { "z", mode = "v" } },
+    config = function()
+      require("nvim-foldsign").setup(require("nvim-foldsign").setup {
+        offset = -3,
+        foldsigns = {
+          close = " 󰍝 ",
+          open = "  ",
+          seps = { "│", "┃" },
+        },
+      })
+    end,
+  },
+
+  --
+  --Personalización de Foldtext
+  {
+    keys = { { "z", mode = "n" }, { "z", mode = "v" } },
     "anuvyklack/pretty-fold.nvim",
     config = function()
       require("pretty-fold").setup {}
     end,
   },
+
+  --
+  --Marcadores con almacenamiento de archivos global
   {
     "tomasky/bookmarks.nvim",
     config = function()
@@ -15,14 +38,14 @@ local plugins = {
     end,
   },
 
+  --
+  --agregar/cambiar/eliminar paresde delimitadores circundantes.
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", --
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require("nvim-surround").setup {}
     end,
   },
 
@@ -39,6 +62,8 @@ local plugins = {
       require("gomove").setup {}
     end,
   },
+
+  --
   -- crea comandos para ejecuar projectos
   {
     "rest-nvim/rest.nvim",
@@ -67,7 +92,7 @@ local plugins = {
         modes = {
           ataraxis = {
             minimum_writing_area = { -- minimum size of main window
-              width = 100,
+              width = 105,
               height = 44,
             },
           },

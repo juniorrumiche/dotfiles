@@ -9,9 +9,6 @@ M.override = {
   ["@conditional"] = { bold = true },
   ["@constant"] = { bold = true },
 
-  Sneak = { bg = "#EF9F76" },
-  Folded = { bg = "#303446", fg = "#EF9F76" },
-
   -- colores personalizados
   PmenuSel = { bold = true, bg = "#8CAAEE" },
   Boolean = { italic = true },
@@ -22,6 +19,10 @@ M.override = {
   Conditional = { bold = true },
   Operator = { bold = true },
   Variable = { fg = "#EF9F76" },
+
+  -- para los plegables
+  Folded = { bg = "#303446", fg = "#EF9F76" },
+  FoldColumn = { bg = "#303446" },
 }
 
 return M
