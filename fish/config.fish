@@ -14,7 +14,8 @@ if status is-interactive
 
     # my alias
     alias v="nvim"
-    alias showkeys="screenkey  -s medium -p bottom --geometry 28%x50%+70%+50% --opacity 0.8"
+    alias showkeys="screenkey  -s medium -p bottom --geometry 24%x50%+74%+50% --opacity 0.9 -M "
   
 end
+  
 starship init fish | source
