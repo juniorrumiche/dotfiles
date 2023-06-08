@@ -1,7 +1,7 @@
 format = """
-[](fg:#DA627D) \
+[ ](fg:#677098)\
  $username\
-[](fg:#DA627D)\
+[](fg:#677098)\
 $directory\
 [→](fg:#DA627D)\
 $git_branch\
@@ -83,7 +83,7 @@ format = ' took [$duration](fg:#FCA17D )'
 
 
 [git_branch]
-symbol = " "
+symbol = "  "
 format = '[[ $symbol $branch ](fg:#FCA17D )]($style)'
 
 [git_commit]
@@ -155,6 +155,11 @@ format = '[[ $symbol ($version) ]()]($style)'
 symbol = "ஃ "
 style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ]()]($style)'
+
+[python]
+symbol = "  "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version)($pyenv_prefix) (\($virtualenv\)) ](fg:#06969A)]($style)'
  
 [nodejs]
 symbol = " NODE"

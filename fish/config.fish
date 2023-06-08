@@ -1,4 +1,8 @@
 if status is-interactive
+    alias djrun="python manage.py runserver"
+    alias djstart="python manage.py startapp"
+    alias djmakemig="python manage.py makemigrations"
+    alias djmig="python manage.py migrate"
     # to clear command
     alias clear="TERMINFO=/usr/share/terminfo TERM=xterm /usr/bin/clear"
     
