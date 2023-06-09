@@ -2,6 +2,14 @@ local overrides = require "custom.configs.overrides"
 
 local plugins = {
 
+  {
+    "andweeb/presence.nvim",
+    event = "BufEnter",
+    config = function()
+      require "custom.configs.presence"
+      -- add any options here
+    end,
+  },
   --
   --muestra los pliegues en la columna de signos
   {
@@ -80,7 +88,7 @@ local plugins = {
   -- para emmet, el lsp de emmet no me gusta
   {
     "mattn/emmet-vim",
-    keys = { { "<C-Y>,", mode = "i" } },
+    keys = { { "<C-Y>", mode = "i" }, { "<C-Y>", mode = "v" } },
   },
 
   -- modo no distraccion

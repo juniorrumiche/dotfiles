@@ -87,7 +87,7 @@ M.nvimtree = {
 
 M.telescope = {
   defaults = {
-    file_ignore_patterns = { "node_modules", "vendor" },
+    file_ignore_patterns = { "node_modules", "vendor", "venv" },
   },
 
   extensions_list = { "themes", "terms", "project", "bookmarks" },

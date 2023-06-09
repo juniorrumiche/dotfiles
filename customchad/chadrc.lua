@@ -1,5 +1,6 @@
 local M = {}
 
+
 local highlights = require "custom.highlights"
 
 M.ui = {
