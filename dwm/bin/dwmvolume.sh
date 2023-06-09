@@ -6,7 +6,7 @@ notify_cmd='dunstify -u low -h string:x-dunst-stack-tag:obvolume'
 
 # Get Volume
 get_volume() {
-  echo "`pactl list sinks | grep 'Volume:' | head -n1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' `"
+  echo "`pactl list sinks | grep 'Volumen:' | head -n1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,' `"
 }
 
 # Get icons
