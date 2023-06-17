@@ -18,7 +18,7 @@ get_icon() {
     icon="$iDIR/volume-low.png"
   elif [[ ("$current" -ge "30") && ("$current" -le "60") ]]; then
     icon="$iDIR/volume-mid.png"
-  elif [[ ("$current" -ge "60") && ("$current" -le "120") ]]; then
+  elif [[ ("$current" -ge "60") && ("$current" -le "130") ]]; then
     icon="$iDIR/volume-high.png"
   fi
   ${notify_cmd} -i "$icon" "Volume : $current%"
@@ -27,7 +27,7 @@ get_icon() {
 # Increase Volume
 inc_volume() {
   [[ `pulsemixer --get-mute` == 1 ]] && pulsemixer --unmute
-  if [[ $(get_volume) -gt 110 ]]
+  if [[ $(get_volume) -gt 125 ]]
   then
     get_icon
   else
