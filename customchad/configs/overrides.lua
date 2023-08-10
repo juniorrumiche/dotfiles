@@ -1,4 +1,5 @@
 local M = {}
+local cmp = require "cmp"
 
 M.cmp = {
 
@@ -13,9 +14,15 @@ M.cmp = {
     { name = "buffer" },
     { name = "path" },
   },
+  mapping = {
+    ["<CR>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
+    },
+  },
   formatting = {
     format = function(entry, vim_item)
-      local icons = require("nvchad_ui.icons").lspkind
+      local icons = require "nvchad.icons.lspkind"
       local source_mapping = {
 
         nvim_lsp = "[LSP]",
