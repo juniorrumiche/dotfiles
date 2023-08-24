@@ -2,6 +2,25 @@
 
 interval=0
 
+speed_network() {
+
+	# Obtener el nombre de la interfaz de red
+	iface=$(ip route | grep default | sed -e "s/^.*dev.//" -e "s/.proto.*//")
+
+	# Obtener el número de bytes recibidos y enviados
+	received1=$(cat /sys/class/net/$iface/statistics/rx_bytes)
+
+	sleep 1
+
+	received2=$(cat /sys/class/net/$iface/statistics/rx_bytes)
+	received_diff=$((received2 - received1))
+	received_kbps=$((received_diff / 1024))
+
+	printf "^c#3b414d^ ^b#E5C890^ 󰇚"
+	printf "^c#abb2bf^ ^b#353b45^ $received_kbps kbps"
+
+}
+
 ## Cpu Info
 cpu_info() {
 	cpu_load=$(grep -o "^[^ ]*" /proc/loadavg)
@@ -18,8 +37,8 @@ memory() {
 ## Wi-fi
 wlan() {
 	case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
-		up) printf "^c#3b414d^^b#8CAAEE^  ^d^%s" " ^c#7aa2f7^Connected " ;;
-		down) printf "^c#3b414d^^b#8CAAEE^ 睊 ^d^%s" " ^c#E06C75^Disconnected " ;;
+	up) printf "^c#3b414d^^b#8CAAEE^  ^d^%s" " ^c#7aa2f7^Connected " ;;
+	down) printf "^c#3b414d^^b#8CAAEE^ 睊 ^d^%s" " ^c#E06C75^Disconnected " ;;
 	esac
 }
 
@@ -42,8 +61,8 @@ updates() {
 
 ## Battery Info
 battery() {
-	BAT=$(upower -i `upower -e | grep 'BAT'` | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
-	AC=$(upower -i `upower -e | grep 'BAT'` | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
+	BAT=$(upower -i $(upower -e | grep 'BAT') | grep 'percentage' | cut -d':' -f2 | tr -d '%,[:blank:]')
+	AC=$(upower -i $(upower -e | grep 'BAT') | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
 
 	if [[ "$AC" == "charging" ]]; then
 		printf "^c#E49263^  $BAT%%"
@@ -66,7 +85,7 @@ battery() {
 
 ## Brightness
 brightness() {
-	LIGHT=$(printf "%.0f\n" `light -G`)
+	LIGHT=$(printf "%.0f\n" $(light -G))
 
 	if [[ ("$LIGHT" -ge "0") && ("$LIGHT" -le "25") ]]; then
 		printf "^c#56B6C2^  $LIGHT%%"
@@ -81,8 +100,8 @@ brightness() {
 
 ## Main
 while true; do
-  [ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ] 
-  interval=$((interval + 1))
+	[ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ]
+	interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$(battery) $(brightness) $(cpu_info) $(memory) $(wlan) $(clock)"
+	sleep 1 && xsetroot -name "$(speed_network) $(battery) $(brightness) $(cpu_info) $(memory) $(wlan) $(clock)"
 done
