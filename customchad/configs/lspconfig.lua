@@ -10,6 +10,7 @@ local servers = {
   "cssls",
   "jsonls",
   "tsserver",
+  "tailwindcss",
 
   -- c , c++
   "clangd",
