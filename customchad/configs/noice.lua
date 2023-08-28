@@ -7,7 +7,7 @@ end
 local options = {
   lsp = {
     progress = {
-      enabled = true,
+      enabled = false,
     },
     signature = {
       enabled = false,
