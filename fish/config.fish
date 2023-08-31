@@ -1,4 +1,6 @@
 if status is-interactive
+    alias pm="pnpm "
+    alias restart="sudo systemctl restart"
     alias djrun="python manage.py runserver"
     alias djstart="python manage.py startapp"
     alias djmakemig="python manage.py makemigrations"
@@ -18,6 +20,7 @@ if status is-interactive
 
     # my alias
     alias v="nvim"
+    alias nv="neovide"
     alias showkeys="screenkey  -s medium -p bottom --geometry 24%x50%+74%+50% --opacity 0.9 -M "
   
 end

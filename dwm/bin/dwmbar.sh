@@ -37,7 +37,7 @@ memory() {
 ## Wi-fi
 wlan() {
 	case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
-	up) printf "^c#3b414d^^b#8CAAEE^  ^d^%s" " ^c#7aa2f7^Connected " ;;
+	up) printf "^c#3b414d^^b#8CAAEE^  ^d^%s" " ^c#7aa2f7^$(iwgetid -r) " ;;
 	down) printf "^c#3b414d^^b#8CAAEE^ 睊 ^d^%s" " ^c#E06C75^Disconnected " ;;
 	esac
 }
