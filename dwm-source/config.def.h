@@ -1,6 +1,6 @@
 
 /* ******************** Configurations ******************** */
-static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int default_border =
     1; // to switch back to default border after dynamic border resizing via
        // keybinds
