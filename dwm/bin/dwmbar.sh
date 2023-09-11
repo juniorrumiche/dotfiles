@@ -1,6 +1,14 @@
-#!/usr/bin/bash
-
 interval=0
+
+# Módulo de sesiones abiertas
+dwm_sessions() {
+	windows=$(wmctrl -l | wc -l)
+  
+  ##C6A0F6
+	printf "^c#3b414d^ ^b#F5A97F^ "
+	printf "^c#abb2bf^ ^b#353b45^ $windows OPEN"
+
+}
 
 speed_network() {
 
@@ -17,7 +25,7 @@ speed_network() {
 	received_kbps=$((received_diff / 1024))
 
 	printf "^c#3b414d^ ^b#E5C890^ 󰇚"
-	printf "^c#abb2bf^ ^b#353b45^ $received_kbps kbps"
+	printf "^c#abb2bf^ ^b#353b45^ $received_kbps Kbps"
 
 }
 
@@ -31,13 +39,13 @@ cpu_info() {
 
 ## Memory
 memory() {
-	printf "^c#CA9EE6^^b#353B45^   $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) "
+	printf "^c#DDB6F2^^b#353B45^   $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) "
 }
 
 ## Wi-fi
 wlan() {
 	case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
-	up) printf "^c#3b414d^^b#8CAAEE^  ^d^%s" " ^c#7aa2f7^$(iwgetid -r) " ;;
+	up) printf "^c#3b414d^^b#8CAAEE^   ^d^%s" " ^c#7aa2f7^$(iwgetid -r) " ;;
 	down) printf "^c#3b414d^^b#8CAAEE^ 睊 ^d^%s" " ^c#E06C75^Disconnected " ;;
 	esac
 }
@@ -65,7 +73,7 @@ battery() {
 	AC=$(upower -i $(upower -e | grep 'BAT') | grep 'state' | cut -d':' -f2 | tr -d '[:blank:]')
 
 	if [[ "$AC" == "charging" ]]; then
-		printf "^c#E49263^  $BAT%%"
+		printf "^c#7DC4E4^  $BAT%%"
 	elif [[ "$AC" == "fully-charged" ]]; then
 		printf "^c#E78284^  Full"
 	else
@@ -88,13 +96,13 @@ brightness() {
 	LIGHT=$(printf "%.0f\n" $(light -G))
 
 	if [[ ("$LIGHT" -ge "0") && ("$LIGHT" -le "25") ]]; then
-		printf "^c#56B6C2^  $LIGHT%%"
+		printf "^c#B5E8E0^  $LIGHT%%"
 	elif [[ ("$LIGHT" -ge "25") && ("$LIGHT" -le "50") ]]; then
-		printf "^c#56B6C2^  $LIGHT%%"
+		printf "^c#B5E8E0^  $LIGHT%%"
 	elif [[ ("$LIGHT" -ge "50") && ("$LIGHT" -le "75") ]]; then
-		printf "^c#56B6C2^  $LIGHT%%"
+		printf "^c#B5E8E0^  $LIGHT%%"
 	elif [[ ("$LIGHT" -ge "75") && ("$LIGHT" -le "100") ]]; then
-		printf "^c#56B6C2^  $LIGHT%%"
+		printf "^c#B5E8E0^  $LIGHT%%"
 	fi
 }
 
@@ -103,5 +111,5 @@ while true; do
 	[ "$interval" == 0 ] || [ $(("$interval" % 3600)) == 0 ]
 	interval=$((interval + 1))
 
-	sleep 1 && xsetroot -name "$(speed_network) $(battery) $(brightness) $(cpu_info) $(memory) $(wlan) $(clock)"
+	sleep 1 && xsetroot -name " $(dwm_sessions) $(battery) $(speed_network) $(brightness) $(cpu_info) $(memory) $(wlan) $(clock)"
 done
