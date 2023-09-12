@@ -30,3 +30,24 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          enabled = true,
+          ignore = {"E501"},
+        },
+        pyflakes = {
+          enabled = true,
+        },
+        pylint = {
+          enabled = true,
+        },
+      }
+    }
+  }
+}
