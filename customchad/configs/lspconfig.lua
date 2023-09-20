@@ -14,9 +14,9 @@ local servers = {
 
   -- c , c++
   "clangd",
-  "dartls",
 
   -- "pyright",
+  "dartls",
   "pylsp",
   "intelephense",
   "bashls",
@@ -39,7 +39,7 @@ lspconfig.pylsp.setup {
       plugins = {
         pycodestyle = {
           enabled = true,
-          ignore = {"E501"},
+          ignore = { "E501" },
         },
         pyflakes = {
           enabled = true,
@@ -47,7 +47,7 @@ lspconfig.pylsp.setup {
         pylint = {
           enabled = true,
         },
-      }
-    }
-  }
+      },
+    },
+  },
 }

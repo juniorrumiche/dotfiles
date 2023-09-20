@@ -61,7 +61,15 @@ M.treesitter = {
     "lua",
     "dockerfile",
   },
+  indent = {
+    enable = true,
+    disable = {
+      "dart",
+    },
+  },
 }
+
+
 M.blankline = {
   filetype_exclude = {
     "help",
@@ -78,8 +86,10 @@ M.blankline = {
     "mason",
     "progress",
     "noice",
+    "nvdash",
   },
 }
+
 M.nvimtree = {
   git = {
     enable = true,
@@ -89,6 +99,14 @@ M.nvimtree = {
   update_focused_file = {
     enable = true,
     update_cwd = true,
+  },
+  renderer = {
+
+    icons = {
+      show = {
+        git = true,
+      },
+    },
   },
 }
 
