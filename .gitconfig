@@ -1,0 +1,7 @@
+[user]
+	name = Junior Rumiche
+	email = juniorrumichem@gmail.com
+[init]
+	defaultBranch = master
+[safe]
+	directory = /opt/flutter
