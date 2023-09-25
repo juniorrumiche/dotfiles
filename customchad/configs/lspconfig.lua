@@ -16,7 +16,7 @@ local servers = {
   "clangd",
 
   -- "pyright",
-  "dartls",
+  -- "dartls",
   "pylsp",
   "intelephense",
   "bashls",

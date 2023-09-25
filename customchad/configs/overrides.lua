@@ -43,6 +43,8 @@ M.cmp = {
 
 M.treesitter = {
   ensure_installed = {
+    "htmldjango",
+    "python",
     "html",
     "php",
     "http",
@@ -68,7 +70,6 @@ M.treesitter = {
     },
   },
 }
-
 
 M.blankline = {
   filetype_exclude = {
@@ -112,7 +113,7 @@ M.nvimtree = {
 
 M.telescope = {
   defaults = {
-    file_ignore_patterns = { "node_modules", "vendor", "venv", "__pycache__" },
+    file_ignore_patterns = { "node_modules", "vendor", "venv", "__pycache__", ".idea", "build" },
   },
 
   extensions_list = { "themes", "terms", "project", "bookmarks" },

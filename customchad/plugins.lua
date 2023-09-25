@@ -2,18 +2,16 @@ local overrides = require "custom.configs.overrides"
 
 local plugins = {
   {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup()
-    end,
+    "akinsho/flutter-tools.nvim",
+    ft = "dart",
     dependencies = {
-      "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
+    config = function()
+      require "custom.configs.flutter-tools"
+    end,
   },
-
   {
     "andweeb/presence.nvim",
     event = "BufEnter",
