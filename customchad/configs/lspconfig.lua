@@ -38,14 +38,18 @@ lspconfig.pylsp.setup {
     pylsp = {
       plugins = {
         pycodestyle = {
+          enabled = false,
+        },
+
+        pylsp_black = {
+          enabled = true,
+        },
+        flake8 = {
           enabled = true,
           ignore = { "E501" },
         },
-        pyflakes = {
-          enabled = true,
-        },
-        pylint = {
-          enabled = true,
+        mccabe = {
+          enabled = false,
         },
       },
     },

@@ -20,7 +20,7 @@ local sources = {
   -- Lua
   b.formatting.stylua,
   --python
-  b.formatting.autopep8,
+  b.formatting.black,
   b.formatting.djlint,
   -- b.diagnostics.djlint,
   b.formatting.dart_format,
