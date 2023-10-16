@@ -10,7 +10,7 @@ local servers = {
   "cssls",
   "jsonls",
   "tsserver",
-  "tailwindcss",
+  -- "tailwindcss",
 
   -- c , c++
   "clangd",
@@ -40,6 +40,9 @@ lspconfig.pylsp.setup {
         pycodestyle = {
           enabled = false,
         },
+        pyflakes = {
+          enabled = false,
+        },
 
         pylsp_black = {
           enabled = true,
@@ -54,4 +57,10 @@ lspconfig.pylsp.setup {
       },
     },
   },
+}
+
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "htmldjango" },
 }

@@ -9,8 +9,8 @@ g.db_ui_force_echo_notifications = 1
 gui.guifont = "JetBrainsMono Nerd Font Mono:h9.6:b"
 opt.number = true
 opt.relativenumber = true
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.shiftwidth = 3
+opt.tabstop = 3
 opt.numberwidth = 3
 
 opt.updatetime = 300
