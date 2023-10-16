@@ -131,14 +131,11 @@ M.mason = {
     "css-lsp",
     "pyright",
     "intelephense",
-    "dockerls",
 
     -- formatters
     "stylua",
     "prettierd",
-    "autopep8",
     "djlint",
-    "pylint",
     "phpcbf",
 
     -- "code actions"
