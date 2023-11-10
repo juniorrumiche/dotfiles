@@ -58,6 +58,7 @@ ln -s ~/dotfiles/starship.toml
 The following commands install various utilities on your system:
 ```sh
 paru -S fish starship google-chrome-stable neovim neovide gpick\
+    github-cli
 	
 ```
 ## Neovim Language Servers

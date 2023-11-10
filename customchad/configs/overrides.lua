@@ -95,20 +95,11 @@ M.nvimtree = {
   git = {
     enable = true,
   },
-
   update_cwd = true,
   update_focused_file = {
     enable = true,
     update_cwd = true,
-  },
-  renderer = {
-
-    icons = {
-      show = {
-        git = true,
-      },
-    },
-  },
+  }
 }
 
 M.telescope = {
