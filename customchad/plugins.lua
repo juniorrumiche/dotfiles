@@ -167,10 +167,6 @@ local plugins = {
     ft = "typescript",
   },
   {
-    "ylcnfrht/vscode-python-snippet-pack",
-    ft = "python",
-  },
-  {
     "Alexisvt/flutter-snippets",
     ft = "dart",
   },
