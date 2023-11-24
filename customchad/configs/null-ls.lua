@@ -12,7 +12,8 @@ local sources = {
   -- code actions para javascript
   b.code_actions.eslint_d,
   -- php format
-  b.formatting.phpcbf,
+  -- b.formatting.phpcbf,
+  b.formatting.phpcsfixer,
 
   -- js, css, html, sass, json, yaml
   b.formatting.prettierd,
